@@ -11,7 +11,6 @@
 		41B1D01B2B067F940052D417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1D01A2B067F940052D417 /* ContentView.swift */; };
 		41B1D01D2B067F950052D417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D01C2B067F950052D417 /* Assets.xcassets */; };
 		41B1D0202B067F950052D417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D01F2B067F950052D417 /* Preview Assets.xcassets */; };
-		41B1D0272B068D030052D417 /* FileManager-Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1D0262B068D030052D417 /* FileManager-Encodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		41B1D01A2B067F940052D417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41B1D01C2B067F950052D417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41B1D01F2B067F950052D417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		41B1D0262B068D030052D417 /* FileManager-Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Encodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,6 @@
 			children = (
 				41B1D0182B067F940052D417 /* BucketListApp.swift */,
 				41B1D01A2B067F940052D417 /* ContentView.swift */,
-				41B1D0262B068D030052D417 /* FileManager-Encodable.swift */,
 				41B1D01C2B067F950052D417 /* Assets.xcassets */,
 				41B1D01E2B067F950052D417 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41B1D0272B068D030052D417 /* FileManager-Encodable.swift in Sources */,
 				41B1D01B2B067F940052D417 /* ContentView.swift in Sources */,
 				41B1D0192B067F940052D417 /* BucketListApp.swift in Sources */,
 			);
