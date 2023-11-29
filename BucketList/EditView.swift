@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct EditView: View {
-    @StateObject private var viewModel = ViewModel(location: location)
-    
     @Environment(\.dismiss) var dismiss
-    var location: Location
+    @StateObject private var viewModel: ViewModel
     var onSave: (Location) -> Void
     
     var body: some View {
@@ -42,11 +40,7 @@ struct EditView: View {
             .navigationTitle("Place details")
             .toolbar {
                 Button("Save") {
-                    var newLocation = location
-                    newLocation.id = UUID()
-                    newLocation.name = name
-                    newLocation.description = description
-                    
+                    var newLocation = viewModel.saveLocation()
                     onSave(newLocation)
                     dismiss()
                 }
@@ -58,11 +52,8 @@ struct EditView: View {
     }
     
     init(location: Location, onSave: @escaping (Location) -> Void) {
-        self.location = location
+        _viewModel = StateObject(wrappedValue: ViewModel(location: location))
         self.onSave = onSave
-        
-        _name = State(initialValue: location.name)
-        _description = State(initialValue: location.description)
     }
 }
 

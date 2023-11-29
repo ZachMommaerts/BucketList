@@ -12,16 +12,24 @@ extension EditView {
         enum LoadingState {
             case loading, loaded, failed
         }
-        private var location: Location
-        @Published private var name: String
-        @Published private var description: String
-        @Published private var loadingState = LoadingState.loading
-        @Published private var pages = [Page]()
+        var location: Location
+        @Published var name: String
+        @Published var description: String
+        @Published var loadingState = LoadingState.loading
+        @Published var pages = [Page]()
         
         init(location: Location) {
+            name = location.name
+            description = location.description
             self.location = location
-            self.name = location.name
-            self.description = location.description
+        }
+        
+        func saveLocation() -> Location {
+            var newLocation = location
+            newLocation.id = UUID()
+            newLocation.name = name
+            newLocation.description = description
+            return newLocation
         }
         
         func fetchNearbyPlaces() async {
