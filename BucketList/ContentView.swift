@@ -47,13 +47,12 @@ struct ContentView: View {
                             viewModel.addLocation()
                         } label: {
                             Image(systemName: "plus")
+                                .padding()
+                                .background(.black.opacity(0.75))
+                                .foregroundStyle(.white)
+                                .font(.title)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         }
-                        .padding()
-                        .background(.black.opacity(0.75))
-                        .foregroundStyle(.white)
-                        .font(.title)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        
                     }
                 }
             }
@@ -70,6 +69,9 @@ struct ContentView: View {
             .background(.blue)
             .foregroundStyle(.white)
             .clipShape(Capsule())
+            .alert(viewModel.errorMessage, isPresented: $viewModel.errorUnlocking) {
+                Button("OK", role: .cancel) { }
+            }
         }
     }
 }

@@ -15,6 +15,8 @@ extension ContentView {
         @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
+        @Published var errorUnlocking = false
+        @Published var errorMessage = ""
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
         
@@ -64,11 +66,13 @@ extension ContentView {
                             self.isUnlocked = true
                         }
                     } else {
-                        // error
+                        self.errorUnlocking = true
+                        self.errorMessage = "Could not verify your identity. Please try again."
                     }
                 }
             } else {
-                // no biometrics
+                self.errorUnlocking = true
+                self.errorMessage = "Could not use biometrics to unlock data. Please use a different method of verifying your identity."
             }
         }
     }
